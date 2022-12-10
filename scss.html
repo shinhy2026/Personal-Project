@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="scss_style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@1,700&display=swap" rel="stylesheet">
+    <title>SCSS/CSS</title>
+</head>
+<body>
+    <div class="outer-wrapper">
+        <div class="wrapper">
+            <section class="slide one">
+                    <div class="scss_title">SCSS</div> 
+            </section>
+            <section class="slide two">
+                <div class="wave">
+                    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                        <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill one"></path>
+                        <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill one"></path>
+                        <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill one"></path>
+                    </svg>
+                </div>
+                <h2>Switch</h2>
+                <div class="switch" id="switch-model">
+                <div class="switch-flex">
+                    <h2 class="switch-title">SWITCH!</h2>
+                    <h3 class="switch-title">Hover me on the screen!</h3>
+                </div>
+                    <p class="description">
+                        When you hover over this box, the two contrasting boxes (black box at the top left and transparent box at the bottom right, located behind the main box that contains this text) will switch their places by diagonally moving across the page. 
+                    </p>
+                    <p class="description">
+                        Pseudo-element is used to style specified parts of an element. For example, it can be used to insert content before, or after, the content of an element. By using pseudo-elements of ::before and ::after which will divide the top and bottom boxes into two separate parts, I set the top-left box the ::before element and the bottom right box the ::after element with each positioned with <code>top: ±15px; left: ±15px;</code>. I made the transition animation using a pseudo-class of <code>:hover</code>, in which pseudo-class is used to define a special state of an element and <code>:hover</code> applies the properties of the selector to be set to something then it is hovered over.
+Using a SCSS feature of ampersand (&) which allows me to nest selectors, I could make the animation with this code: <code>&::before, &::after {transition: all .25s ease-out;}</code> nested inside the <code>:hover</code>, which changes each position of the ::before and ::after to one another. The transition property allows the audience to see the process of changing positions. The ‘.25s’ makes the animation occur for 0.25 seconds, and ‘ease-out’ makes it slowly start to slowly fade out.
+                    </p>
+                </div>
+                
+            </section>
+
+            <section class="slide three">
+                <div class="wave">
+                    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill two"></path>
+                    </svg>
+                </div>
+                <h2>Slide up</h2>
+                <div class="box-model">
+                    <div class="slide-up-one" id="box-pop">    
+                        <h3 class="slide-up-title">Slide up - Flexbox</h3>
+                        <div class="one-description">
+                            <p class="slide-up-description">
+                                When you hover over these boxes, from white background, the black background will gradually emerge from bottom to top. When you unhover the model, the background will return to white and the black background will go back its path to the bottom gradually.
+                            </p>
+                            <p class="slide-up-description">
+                                These two boxes are aligned and positioned with flexbox layout. In the <code>.box-model {display: flex;}</code> selector, the display property sets the value as flex so that I can use flexbox layout properties. <code>flex-wrap: row;</code> horizontally (row) aligns the two boxes, and <code>justify-content: space-between;</code> distributes the space, gives a gap between the boxes.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="slide-up-two" id="box-pop">
+                        <h3 class="slide-up-title">Slide up - SCSS</h3>
+                        <div class="two-description">
+                            <h4 class="slide-up-sub">Ampersand (&)</h4>
+                            <p>
+                                In this SCSS feature, there are two parts of the model, the white background and the black background. The black background is set as the before pseudo-class <code>&:before</code>. With SCSS ampersand nested inside a selector, the selector with the ampersand inside inherits all the properties of the super-selector. Thus the :before pseudo-class follow the same property values of its super-selector, <code>#box-pop</code>, so that the design is the same as the white background except for the background color and transform property, which is differentiated in the <code>&:before</code>.
+                            </p>
+                        </div>
+                        <div class="two-description">
+                            <h4 class="slide-up-sub">:hover, transform, transition</h4>
+                            <p>
+                                The properties and values of <code>transform: scaleY(0); transform-origin: 0 bottom 0;</code> sets the black background to not to be seen with no area currently covering and at the very bottom, and <code>transition: .4s ease-out;</code> applies the animation by giving a moment for the black background to move to the top for 0.4 seconds, instead of moving so quickly that we can’t see the movement. The <code>&:before {transform: scaleY(1);}</code> is nested inside <code>&:hover</code>. This means that :before (the black background) is nested inside the <code>:hover</code>, and will be activated when the content is hovered. <code>scaleY(1);</code> value will bring the black from the bottom to the top of the box, changing the colour.
+                            </p>
+                        </div>
+                    </div>
+                </div>    
+            </section>
+
+            <section class="slide four">
+                <div class="wave">
+                    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                        <path d="M1200 0L0 0 892.25 114.72 1200 0z" class="shape-fill three"></path>
+                    </svg>
+                </div>
+                <h2>Expand</h2>
+                <div class="expand">
+                    <div class="card">
+                        <span class="card__first-show">
+                            <div class="card__pretext">Hover Me</div>
+                        </span>
+                        <div class="card__title">Expand</div>
+                        <div class="card__description">
+                            <p class="card__text">
+                                The default appearance of the card is a small rectangle with a round border-radius, with a text “hover me” written in the middle center of the box. When hovered, the small rectangle expands into a larger box with new text appearing.
+                            </p>
+                            <p class="card__text">
+                                The default (x hover) is that the property <code>clip-path: inset(0 0 80% 80% round 3%);</code> clips the white content block to a small section so that we can only see the small section of the white rectangle. <code>clip-path</code> is a CSS property that creates a clipping region that sets what part of an element should be shown. Parts that are inside the region are shown, while those outside are hidden. Its value, <code>inset()</code>, clips a rectangle. The first four numbers set the offsets of each side from the reference box inward that define the positions of the edges. <code>round 3%</code> indicates the border-radius, meaning that it curves the edges.
+                            </p>
+                            <p class="card__text">
+                                On hover with <code>&:hover</code>, <code>clip-path: inset(0 0 0% 0% round 4%);</code> makes a difference in the inset() value, so that the white rectangle is fully visible without clipping (except for the border radius). Nested inside the :hover pseudo-class, when hovered, the property <code>opacity: 0;</code> makes the text “hover me” disappear as the opacity becomes 0, that was once 1. With <code>transition: all ease-in-out .3s;</code>, the “ease-in-out” value allows for both the expansion and returning to the default state to be animated. With <code>transition:ease-out .3s;</code>, the main text that was hidden will also be visible when expanded, and disappear when hovered.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide five">
+                <div class="wave">
+                    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                        <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+                        <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+                        <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill four"></path>                    </svg>
+                </div>
+                <h2>One after Another</h2>
+                <div class="column-flex">
+                    <div class="names">
+                        <div class="skillnames">
+                            <li>
+                                <div><span>The</span><div>
+                            </li>
+                            <li>
+                                <div><span>Panels</span></div>
+                            </li>
+                            <li>
+                                <div><span>Comes</span></div>
+                            </li>
+                            <li>
+                                <div><span>After</span></div>
+                            </li>
+                            <li>
+                                <div><span>One</span></div>
+                            </li>
+                            <li>
+                                <div><span>Another</span></div>
+                            </li>
+                        </div>
+                    </div>
+                    <img id="arrow" src="arrow.png" alt="">
+                    <div class="one-after-another-description">
+                        <p class="description">When hovered over the model, in each divided section, the text in each section will come up one by one, and then go down and disappear in the same order when un-hovered.</p>
+                        <p class="description">Putting each text into a list, the <code>li</code> selector was aligned with flexbox display. With <code>display: block;</code> of the <code>div</code> selectors surrounding the <code>li</code>s, the texts are put into smaller blocks inside the divs and creates the design above.</p>
+                        <p class="description">For recognizing the hovering, <code>@media (hover: hover) {}</code> was used to define <code>transform: translateY(100px); transition: 0.2s;</code>, which makes the text to move from bottom to up, in animation. <code>@media</code>, a.k.a media query can conditionally apply styles with the CSS, which also includes hovering and therefore serves the same function as SCSS <code>&:hover</code>. With a property, <code>transition-delay</code> applied to each <code>li</code> but having a different time stamp, it allows for the text to appear delayed and have different timing to come up.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide six">
+                <div class="wave">
+                    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" class="flip">
+                        <path d="M1200 0L0 0 892.25 114.72 1200 0z" class="shape-fill five"></path>
+                    </svg>
+                </div>
+
+                <footer>
+                    <div class="info">
+                        <div class="footer__header">
+                            <h2 class="footer__title">SCSS - a page for my SCSS models</h3>
+                            <a href="/index.html">BACK TO HOME</a>
+                        </div>
+
+                        <p class="footer__text"><strong class="topic" style="text-decoration: underline;">SCSS</strong> (or Sass) is a CSS extension language, which decides the look and formatting of a document written in markup language. SCSS offers a feature to <span style="text-decoration: underline;">nest CSS selectors</span> with a specific <span style="text-decoration: underline;">hierarchical structure</span> that allows more complex CSS syntax structure to be easily written.</p>
+                        <p class="footer__text">For <strong class="topic" style="text-decoration: underline;">Horizontal Scrolling</strong>, I first created content blocks first <code>class=”slides”</code> and put them under two layers of wrappers. Then I rotated the outer wrapper so the top side is on the left and the bottom is on the right. In this way, I could turn a vertical scroll into a horizontal one. However, the content blocks themselves were still rotated and not in the right place, thus I rotated the inner wrapper back so that the content is in the right position. This technique is called double CSS transform.</p>
+                        <p class="footer__text"><strong class="topic" style="text-decoration: underline;">SVG waves</strong>: The waves and shapes between sections are created with SVG, a vector based image. Taking pre-made waves/shapes in SVG files, I put them into a class of “wave”, which initially resulted in the waves to be positioned at the top of the page. I then rescaled <code>.wave {width: 100vh;}</code>, rotated and positioned <code>{transform: rotate(-90deg) translateY(-45vh) translatex(-45vh);}</code> all the shapes at the left end of each section</p>
+                    </div>
+              </footer>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
